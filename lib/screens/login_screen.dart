@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_social_ui/screens/home_screen.dart';
+import 'package:flutter_social_ui/widgets/curved_clipper.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -10,10 +12,13 @@ class LoginScreen extends StatelessWidget {
         height: MediaQuery.of(context).size.height,
         child: Column(
           children: [
-            Image(
-              image: AssetImage('assets/images/login_background.jpg'),
-              height: MediaQuery.of(context).size.height / 3,
-              fit: BoxFit.cover,
+            ClipPath(
+              clipper: CurvedClipper(),
+              child: Image(
+                image: AssetImage('assets/images/login_background.jpg'),
+                height: MediaQuery.of(context).size.height / 3,
+                fit: BoxFit.cover,
+              ),
             ),
             SizedBox(
               height: 40.0,
@@ -58,7 +63,14 @@ class LoginScreen extends StatelessWidget {
               height: 15.0,
             ),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => HomeScreen(),
+                  ),
+                );
+              },
               child: Container(
                 alignment: Alignment.center,
                 height: 50.0,
