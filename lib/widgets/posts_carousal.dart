@@ -69,7 +69,8 @@ class PostsCarousal extends StatelessWidget {
                     child: Text(
                       post.title,
                       style: TextStyle(
-                          fontSize: 18.0, fontWeight: FontWeight.bold),
+                          fontSize: 20.0, fontWeight: FontWeight.bold),
+                      overflow: TextOverflow.ellipsis,
                     ),
                   ),
                   Padding(
